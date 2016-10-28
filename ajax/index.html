@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="content"></div>
+	<script src="/node_modules/jquery/dist/jquery.js"></script>
+	<script src="/node_modules/showdown/dist/showdown.js"></script>
+	<script>
+	// url de la page
+var url = 'http://192.168.1.40:1337/example.md';
+// j'effectue ma requete !
+$.ajax(url)
+.done(function(data){
+//je traite les données reçues
+	console.log(data);
+// on va inserer les données brut ce n'est pas lisible
+$("#content").html(data);
+// je vais convertir les données
+var converter = new showdown.Converter();
+var html = converter.makeHtml(data);
+console.log(html);
+//j'insere le contenu
+$("#content").html(html);
+});
+
+// questions ?
+
+	</script>
+</body>
+</html>

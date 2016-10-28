@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Corpus</title>
+	<link rel="stylesheet" href="/node_modules/semantic-ui-css/semantic.css">
+</head>
+<body>
+
+	<div class="ui container">
+		<h1 class="ui header">Corpus</h1>
+		<form action="/create" class="ui form" method="post">
+			<div class="field">
+				<label for="title">Titre</label>
+				<input type="text" id="title" name="title" value="foo">
+			</div>
+			<div class="field">
+				<label for="content">Contenu</label>
+				<textarea name="content" id="content" cols="30" rows="10">
+					# foo fighters
+				</textarea>
+			</div>
+			<button class="ui button green labeled icon">
+				<i class="icon save"></i> Enregistrer Contenu
+			</button>
+		</form>
+	</div>
+	
+	<script src="/node_modules/jquery/dist/jquery.js"></script>
+	<script src="/app.js"></script>
+</body>
+</html>
